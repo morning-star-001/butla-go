@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butla Go: Spatial Logistics</title>
+    <link data-n-head="1" rel="icon" type="image/x-icon"
+        href="https://butla-assets.s3.us-east-1.amazonaws.com/press/butla_logo_colored.png">
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <!-- Load Boxicons for icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'DM Sans', sans-serif;
+            /* Light background color */
+            background-color: #F7F7F7;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .text-2xl, .font-bold {
+            font-family: "Stack Sans Headline", sans-serif;
+        }
+
+        .primary-color {
+            background-color: blueviolet !important;
+        }
+
+        .text-color {
+            color: blueviolet !important;
+        }
+
+        .bg-gray-50, .bg-gray-200, .bg-gray-100 {
+            background-color: #F4F7FB !important;
+        }
+
+        /* Custom card background for the tech section - white, relying on shadow/border */
+        .tech-card-bg {
+            background-color: white;
+            transition: all 0.3s ease;
+            border: 1px solid #E5E7EB;
+            /* subtle light gray border */
+        }
+
+        .tech-card-bg:hover {
+            border-color: #3B82F6;
+            /* Blue 500 on hover */
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            /* Soft shadow */
+        }
+
+        /* CTA button adapted for light theme, flat style */
+        .cta-button {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+            /* Subtle blue shadow */
+        }
+
+        .cta-button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 10px rgba(59, 130, 246, 0.3);
+        }
+
+        .phone-mockup {
+            background: #F3F4F6;
+            /* Light gray body */
+            border: 4px solid #D1D5DB;
+            /* Lighter border */
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Style for the Manifest card */
+        .manifest-panel {
+            background-color: white;
+            border: 1px solid #D1DDFA;
+            /* Light blue border */
+            box-shadow: 0 5px 20px rgba(59, 130, 246, 0.1);
+            padding: 2.5rem;
+        }
+
+        /* --- New styles for Hero Background --- */
+        .hero-bg {
+            /* Using a placeholder image URL for fast logistics */
+            background-image: url('');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        /* Overlay for hero background to ensure text readability in a light theme */
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            /* White overlay at 90% opacity */
+            z-index: 1;
+        }
+
+        /* Ensure hero content is above the overlay */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body class="text-slate-800">
+
+    <!-- Header / Navigation -->
+    <header class="p-4 bg-white shadow-md sticky top-0 z-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tighter">
+                <div class="flex ">
+                    <img src="https://butla-assets.s3.us-east-1.amazonaws.com/press/butla_logo_colored.png"
+                        style="width: 30px; height: 30px; margin-right: 5px; margin-top: 3px;" />
+                    Butla Go<span class="text-color text-blue-600 text-color">.</span>
+                </div>
+            </h1>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+
+                <a href="#join"
+                    class="primary-color px-5 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition font-bold shadow-md">Get
+                    Started</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section - UPDATED to highlight Same-Day Delivery -->
+    <section class="hero-bg text-slate-900 border-b border-gray-200">
+        <div class="hero-content max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center pt-24 pb-32">
+
+            <!-- Left: Headline & CTA -->
+            <div class="md:col-span-7 lg:col-span-8 text-center md:text-left">
+                <span
+                    class="text-color text-sm font-semibold text-blue-600 text-color uppercase tracking-widest block mb-3">Spatial
+                    AI +
+                    Decentralization</span>
+                <h2 class="text-5xl sm:text-7xl font-extrabold leading-none mb-6">
+                    <span class="text-color text-blue-600 text-color">Same-Day</span> Logistics, <br
+                        class="hidden sm:inline">
+                    Faster, Fairer, Anti-Fragile.
+                </h2>
+                <p class="text-xl font-light mb-10 max-w-xl md:max-w-full mx-auto text-slate-600">
+                    Butla Go delivers predictability, leveraging Triangulation AI and Pinned Observance to
+                    provide 24/7 urban delivery with industry-leading, accurate ETAs for time-sensitive, local
+                    logistics.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button onclick="document.getElementById('modal-cta').style.display='flex'"
+                        class="primary-color cta-button bg-blue-600 text-white font-bold text-lg py-3 px-8 rounded-xl hover:bg-blue-700">
+                        Download the Pilot App
+                    </button>
+                    <a href="#tech"
+                        class="text-slate-700 font-medium text-lg py-3 px-8 rounded-xl border border-gray-300 bg-white/50 hover:border-blue-600 hover:text-blue-600 text-color transition duration-300">
+                        See the Tech
+                    </a>
+                </div>
+                <p class="mt-6 text-sm text-slate-500">Available on iOS and Android via early access.</p>
+            </div>
+
+            <!-- Right: Visual Placeholder - Removed the mockup but kept the responsive grid -->
+            <div class="md:col-span-5 lg:col-span-4 hidden md:flex justify-center">
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem & Dual Solution - Modern Card Grid - ADJUSTED TO MATCH PILLARS STYLE -->
+    <section id="problem" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h3
+                class="text-3xl font-bold text-center mb-20 text-slate-900 border-b-2 border-blue-600 border-opacity-30 inline-block pb-1">
+                Traditional Logistics Pain Points</h3>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <!-- Card 1: Inconsistent Service -->
+                <div class="p-6 tech-card-bg rounded-xl shadow-lg border-t-2 border-blue-600 border-t-4 border-cyan-500">
+                    <div class="text-4xl text-blue-600 text-color mb-4">
+                        <i class='bx bxs-time-five'></i> <!-- Icon for delays/slowness -->
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-blue-600 text-color">01. Inconsistent Service</h4>
+                    <p class="text-slate-700 text-sm">Centralized servers can't keep up with real-time urban
+                        logistics. The result: predictive failure, massive delays, and poor ETA accuracy.</p>
+                </div>
+
+                <!-- Card 2: The Rider Knowledge Gap -->
+                <div class="p-6 tech-card-bg rounded-xl shadow-lg border-t-2 border-blue-600 border-t-4 border-emerald-500">
+                    <div class="text-4xl text-blue-600 text-color mb-4">
+                        <i class='bx bxs-user-x'></i> <!-- Icon for human error/knowledge gap -->
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-blue-600 text-color">02. The Rider Knowledge Gap</h4>
+                    <p class="text-slate-700 text-sm">Delivery reliability suffers from dependency on rider map-reading
+                        ability, literacy, and inconsistent training. The human error factor is too high.</p>
+                </div>
+
+                <!-- Card 3: Data Centralization Risk -->
+                <div class="p-6 tech-card-bg rounded-xl shadow-lg border-t-2 border-blue-600 border-t-4 border-amber-500">
+                    <div class="text-4xl text-blue-600 text-color mb-4">
+                        <i class='bx bxs-server'></i> <!-- Icon for server/centralization risk -->
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-blue-600 text-color">03. Data Centralization Risk</h4>
+                    <p class="text-slate-700 text-sm">One server failure cripples the entire network. Your proprietary
+                        logistics data is vulnerable, unowned, and subject to external control.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Solution Section - IMPROVED FOR CLARITY AND LESS JARGON -->
+    <section id="solution" class="py-24 bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
+
+            <!-- LEFT: Digital Key & Ownership Panel - Updated Content -->
+            <div class="rounded-xl shadow-xl manifest-panel self-center">
+                <div class="flex justify-between items-center mb-4 border-b border-blue-300 pb-3">
+                    <h4 class="text-3xl font-extrabold text-slate-900 flex items-center">
+                        <i class='bx bxs-shield-alt-2 text-blue-600 text-color text-3xl mr-3'></i>
+                        Data Ownership & Digital Key
+                    </h4>
+                    <span
+                        class="text-green-600 text-sm font-semibold border border-green-300 bg-green-50 px-2 py-0.5 rounded-full">PRIVATE
+                        ACCESS</span>
+                </div>
+
+                <p class="text-slate-600 mb-6">
+                    Butla Go uses a secure, decentralized backup and recovery system (like a private blockchain) to
+                    ensure you are the sole owner of your data and network access.
+                </p>
+
+                <!-- START: MANIFEST FILE & DIGITAL KEY INTERFACE - MODIFIED TO JSON CODE BLOCK -->
+                <div class="lg:p-5 rounded-xl border-2x border-green-600x bg-green-50x shadow-inner shadow-green-100/50">
+
+
+                    <!-- JSON Code Block using <pre> and <code> -->
+                    <pre
+                        class="font-mono text-sm leading-relaxed text-gray-200 bg-slate-900 p-4 rounded-lg overflow-x-auto border border-gray-700 shadow-lg">
+{
+  <span class="text-blue-400">"version"</span>: <span class="text-yellow-400">"1.1.0"</span>,
+  <span class="text-blue-400">"node_id"</span>: <span class="text-yellow-400">"7034..."</span>,
+  <span class="text-blue-400">"timestamp"</span>: <span class="text-green-400">1731...</span>,
+  <span class="text-blue-400">"tx_count"</span>: <span class="text-yellow-400">143</span>,
+  <span class="text-blue-400">"fingerprint"</span>: <span class="text-yellow-400">"nzNPAx..."</span>
+  
+}
+</pre>
+                </div>
+                <!-- END: MANIFEST FILE & DIGITAL KEY INTERFACE -->
+
+                <div class="mt-8 space-y-4">
+                    <p class="flex items-center text-slate-700 text-base font-medium">
+                        <i class='bx bxs-network-chart text-blue-600 text-color mr-3 text-xl'></i>
+                        1. Join the Cluster: Use the code to instantly connect to the local logistics network.
+                    </p>
+                    <p class="flex items-center text-slate-700 text-base font-medium">
+                        <i class='bx bxs-cloud-upload text-blue-600 text-color mr-3 text-xl'></i>
+                        2. Verify Identity: Your code confirms your unique, unforgeable network identity.
+                    </p>
+                    <p class="flex items-center text-slate-700 text-base font-medium">
+                        <i class='bx bxs-lock text-blue-600 text-color mr-3 text-xl'></i>
+                        3. Own Your Data: No central company can ever lock you out of your transaction history or
+                        ratings.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- RIGHT: App Description & Gig Economy Focus -->
+            <div class="self-center">
+                <span class="text-sm font-semibold text-blue-600 text-color uppercase">The Butla Go App</span>
+                <h3 class="text-5xl font-extrabold text-slate-900 mb-8 mt-2">The Dual-Role Ecosystem.</h3>
+                <p class="text-slate-600 text-xl mb-10">
+                    Butla Go operates as a peer-to-peer ecosystem for local delivery, where every user is a
+                    node. The mobile app provides two clear paths: Request a delivery or accept delivery and earn.
+                </p>
+
+                <div class="space-y-8">
+
+                    <!-- Role 1: Rider/Contributor -->
+                    <div
+                        class="p-6 bg-gray-50 rounded-xl border border-gray-200 hover:border-blue-600 transition duration-300">
+                        <div class="flex items-start">
+                            <span class="text-4xl font-extrabold text-blue-600 text-color mr-4 mt-1">01</span>
+                            <div>
+                                <p class="font-bold text-2xl text-slate-900 mb-1 flex items-center">
+                                    <i class='bx bx-run text-blue-600 text-color mr-2'></i>
+                                    Accept Delivery & Earn
+                                </p>
+                                <p class="text-slate-600">The Contributor Path: Join the cluster as a logistics
+                                    node. You receive AI-driven, high-fidelity guidance that ensures efficiency and
+                                    maximizes your liveable income.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Role 2: Sender/Beneficiary - Same-Day is here -->
+                    <div
+                        class="p-6 bg-gray-50 rounded-xl border border-gray-200 hover:border-blue-600 transition duration-300">
+                        <div class="flex items-start">
+                            <span class="text-4xl font-extrabold text-blue-600 text-color mr-4 mt-1">02</span>
+                            <div>
+                                <p class="font-bold text-2xl text-slate-900 mb-1 flex items-center">
+                                    <i class='bx bxs-package text-blue-600 text-color mr-2'></i>
+                                    Request Predictable Delivery
+                                </p>
+                                <p class="text-slate-600">The Beneficiary Path: Access the fastest, most predictable
+                                    network for same-day delivery, underpinned by spatial AI and guaranteed
+                                    security.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Technology Differentiator Section - UPDATED with Icons -->
+    <section id="tech" class="py-24 bg-gray-100 text-slate-900 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <h3 class="text-4xl font-extrabold text-center mb-16">The Four Pillars of Predictable Urban Logistics</h3>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- Card 1: AI Triangulation -->
+                <div class="p-6 tech-card-bg rounded-xl shadow-lg border-t-2 border-blue-600x border-t-4 border-blue-500">
+                    <div class="text-4xl text-blue-600 text-color mb-4">
+                        <i class='bx bxs-navigation'></i> <!-- Icon changed to reflect local scope -->
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-blue-600 text-color">01. Predictive Urban Routing
+                    </h4>
+                    <p class="text-slate-700 mb-4 text-sm">
+                        Localized and telemetry data are used alongside Pinned Observance to
+                        instantly triangulate the optimal path within dense urban environments. This guarantees
+                        reliable, high-fidelity routing, ensuring total predictability for every mile.
+                    </p>
+                    <!-- Updated list with Boxicons -->
+                    <ul class="list-none text-xs text-slate-600 space-y-1">
+                        <li class="flex items-center"><i class='bx bx-check-circle text-blue-600 text-color mr-2'></i>
+                            Real-time,
+                            step-by-step guidance in city centers.</li>
+                        <li class="flex items-center"><i class='bx bx-check-circle text-blue-600 text-color mr-2'></i>
+                            Route
+                            fidelity regardless of location or literacy.</li>
+                        <li class="flex items-center"><i class='bx bx-check-circle text-blue-600 text-color mr-2'></i>
+                            Industry-leading ETA accuracy for time-sensitive deliveries.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Spatial Cluster Modeling -->
+                <div class="p-6 tech-card-bg rounded-xl shadow-lg border-t-2 border-blue-600 border-t-4 border-purple-500" >
+                    <div class="text-4xl text-blue-600 text-color mb-4">
+                        <i class='bx bxs-map-pin'></i> <!-- Icon for spatial modeling/location -->
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-blue-600 text-color">02. Interconnected Spatial Cluster
+                        Modeling</h4>
+                    <p class="text-slate-700 mb-4 text-sm">
+                        We model urban geographic activity to create efficient Logistics Clusters, ensuring optimal
+                        rider handoffs and routing efficiency for seamless and reliable local delivery within the
+                        city.
+                    </p>
+                    <!-- Updated list with Boxicons -->
+                    <ul class="list-none text-xs text-slate-600 space-y-1">
+                        <li class="flex items-center"><i class='bx bx-check-circle text-blue-600 text-color mr-2'></i>
+                            Dynamic
+                            urban logistics optimization.</li>
+                        <li class="flex items-center"><i class='bx bx-check-circle text-blue-600 text-color mr-2'></i>
+                            Real-time
+                            location modeling for city routes.</li>
+                        <li class="flex items-center"><i class='bx bx-check-circle text-blue-600 text-color mr-2'></i>
+                            Accurate
+                            traffic and demand forecasting.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Decentralized Telemetry -->
+                <div class="p-6 tech-card-bg rounded-xl shadow-lg border-t-2 border-blue-600x border-t-4 border-cyan-500">
+                    <div class="text-4xl text-blue-600 text-color mb-4">
+                        <i class='bx bxs-devices'></i> <!-- Icon for decentralized devices/nodes -->
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-blue-600 text-color">03. Decentralized Telemetry</h4>
+                    <p class="text-slate-700 mb-4 text-sm">
+                        The network data is housed on user devices, eliminating the central server bottleneck and
+                        creating a resilient, anti-fragile system.
+                    </p>
+                    <!-- Updated list with Boxicons -->
+                    <ul class="list-none text-xs text-slate-600 space-y-1">
+                        <li class="flex items-center"><i class='bx bx-check-circle text-blue-600 text-color mr-2'></i>
+                            No single
+                            point of failure.</li>
+                        <li class="flex items-center"><i class='bx bx-check-circle text-blue-600 text-color mr-2'></i>
+                            Instant data
+                            sharing and consensus.</li>
+                        <li class="flex items-center"><i class='bx bx-check-circle text-blue-600 text-color mr-2'></i>
+                            Network
+                            effect: more users = better predictions.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4: Proof of Person (Ọ̀rànmíyàn) -->
+                <div class="p-6 tech-card-bg rounded-xl shadow-lg border-t-2 border-blue-600x border-t-4 border-amber-500">
+                    <div class="text-4xl text-blue-600 text-color mb-4">
+                        <i class='bx bxs-user-check'></i> <!-- Icon for verification/trust -->
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-blue-600 text-color">04. Proof of Person (Ọ̀rànmíyàn)</h4>
+                    <p class="text-slate-700 mb-4 text-sm">
+                        A novel decentralized consensus that ensures every node (rider/user) contributing data is a
+                        verified, unique entity, building radical trust.
+                    </p>
+                    <!-- Updated list with Boxicons -->
+                    <ul class="list-none text-xs text-slate-600 space-y-1">
+                        <li class="flex items-center"><i class='bx bx-check-circle text-blue-600 text-color mr-2'></i>
+                            Guarantees
+                            unique network participation.</li>
+                        <li class="flex items-center"><i class='bx bx-check-circle text-blue-600 text-color mr-2'></i>
+                            Prevents
+                            Sybil attacks and data pollution.</li>
+                        <li class="flex items-center"><i class='bx bx-check-circle text-blue-600 text-color mr-2'></i>
+                            Elevates
+                            accountability and trust.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section - Visually Prominent -->
+    <section id="join" class="py-20 bg-whitex text-center border-t border-gray-200x">
+        <div class="max-w-3xl mx-auto px-6 p-10 bg-gray-50x rounded-xl border border-gray-200x shadow-lgx">
+            <h3 class="text-4xl font-extrabold mb-4 text-slate-900">Join Butla Go.</h3>
+            <p class="text-xl text-slate-600 mb-8">
+                Be among the first to experience the power of the decentralized spatial logistics. Request early access
+                today.
+            </p>
+            <button onclick="document.getElementById('modal-cta').style.display='flex'"
+                class="primary-color cta-button bg-blue-600 text-white font-bold text-xl py-4 px-12 rounded-xl hover:bg-blue-700">
+                I Want Early Access
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer - Light background -->
+    <footer class="py-8 bg-gray-100 text-slate-600 text-center text-sm border-t border-gray-200">
+        <div class="max-w-6xl mx-auto px-6">
+            <p>&copy; <span id="year"></span> Alchymia AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Simple Modal for CTA (instead of alert) - Adapted for light theme -->
+    <div id="modal-cta" class="fixed inset-0 bg-gray-900 bg-opacity-80 hidden items-center justify-center p-4 z-50">
+        <div
+            class="bg-white p-8 rounded-xl shadow-2xl max-w-sm w-full text-center transform transition-all border border-blue-400 text-slate-800">
+            <h4 class="text-2xl font-bold text-slate-900 mb-4">Join the Butla Go Network!</h4>
+            <p class="text-slate-600 mb-6">
+                Please enter your email to receive the private download link for the Butla Go app.
+            </p>
+            <form onsubmit="handleFormSubmit(event)">
+                <input type="email" id="pilot-email" placeholder="you@business.com" required
+                    class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition bg-white text-slate-800">
+                <button type="submit"
+                    class="w-full cta-button bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700">
+                    Get My Invitation
+                </button>
+            </form>
+            <button onclick="document.getElementById('modal-cta').style.display='none'"
+                class="mt-4 text-sm text-slate-500 hover:text-slate-800">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear()
+        function copyToClipboard(text) {
+            // Fallback for environments where clipboard access is restricted (required in iFrames)
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed'; // Avoid scrolling to bottom
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                console.log('Key copied via document.execCommand');
+            } catch (e) {
+                console.error('Copy failed:', e);
+            }
+            document.body.removeChild(textarea);
+
+            // NOTE: You could add a temporary visual feedback here (e.g., changing the icon color briefly)
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const email = document.getElementById('pilot-email').value;
+            const modalContent = document.getElementById('modal-cta').querySelector('div');
+
+            // Show success message
+            modalContent.innerHTML = `
+                <h4 class="text-2xl font-bold text-slate-900 mb-4">Thank You!</h4>
+                <p class="text-slate-600 mb-6">
+                    An invitation link has been sent to ${email}. Check your inbox (and spam)!
+                </p>
+                <p class="text-sm text-slate-500">
+                    We appreciate your interest in Butla Go. We'll be in touch soon.
+                </p>
+                <button onclick="document.getElementById('modal-cta').style.display='none'" class="mt-6 w-full cta-button bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700">
+                    Finish
+                </button>
+            `;
+        }
+    </script>
+
+</body>
+
+</html>
